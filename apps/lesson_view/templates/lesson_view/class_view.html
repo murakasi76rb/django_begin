@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Class view{% endblock title %}
+{% block contents %}
+<ul>
+    {% for n in numbers %}
+    <li>
+        {{ n }} : {{ n }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock contents %}
