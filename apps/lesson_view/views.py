@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpRequest, HttpResponse
 from django.views.generic import ListView
+from apps.lesson_view.models import Menu
 
 def main(request: HttpRequest) -> HttpResponse:
     return render(request, 'lesson_view/lesson1.html' , {'name': 'Ruslan'})
@@ -20,6 +21,8 @@ class FirstClass(View):
 
 
 class ProdustList(ListView):
-    pass
+    model = Menu
+    template_name = 'lesson_view/list.html'
+    context_object_name = 'menu'
 
 
