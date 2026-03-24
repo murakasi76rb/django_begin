@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.views import View
 from django.http import HttpRequest, HttpResponse
-
+from django.views.generic import ListView
 
 def main(request: HttpRequest) -> HttpResponse:
     return render(request, 'lesson_view/lesson1.html' , {'name': 'Ruslan'})
@@ -19,6 +19,7 @@ class FirstClass(View):
         return render(request, 'lesson_view/class_view.html', context)
 
 
-
+class ProdustList(ListView):
+    pass
 
 
